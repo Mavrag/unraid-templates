@@ -14,7 +14,7 @@
 	HTTPS Support can be enable creating a "certs" folder in the data directory and placing onlyoffice.crt and onlyoffice.key in it. Add fonts by placing [fontname].ttf in the font folder and force updating the container.
   </Description>
   <Registry>https://hub.docker.com/repository/docker/mavrag/onlyoffice-nc</Registry>
-  <GitHub>https://github.com/mavrag/onlyoffice-nc</GitHub>
+  <GitHub>https://github.com/mavrag/Docker-DocumentServer</GitHub>
   <Repository>mavrag/onlyoffice-nc:latest</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
@@ -63,5 +63,5 @@
   <Environment/>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
   <Banner></Banner>
-  <Icon>https://github.com/mavrag/unraid-templates/raw/master/logos/OnlyOfficeDocumentServer/OnlyOfficeDocumentServer.jpg</Icon>
+  <Icon>https://raw.githubusercontent.com/Mavrag/unraid-templates/main/OnlyOfficeDocumentServer/OnlyOfficeDocumentServer.jpg</Icon>
 </Containers>
