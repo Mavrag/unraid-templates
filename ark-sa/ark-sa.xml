@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ark-sa</Name>
+  <Repository>acekorneya/asa_server:latest</Repository>
+  <Registry>https://hub.docker.com/r/acekorneya/asa_server</Registry>
+  <Network>bridge</Network>
+  <Beta>true</Beta>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Acekorneya/Ark-Survival-Ascended-Server</Support>
+  <Project>https://survivetheark.com/</Project>
+  <Overview>`ich777` no longer supports ARK: Survival Ascended, so this is an alternative Unraid template that uses the `acekorneya/asa_server` image.&#xD;
+&#xD;
+This Docker will download and install ARK: Survival Ascended Dedicated Server and run it (Normal server startup of ARK can take a long time!).&#xD;
+&#xD;
+ATTENTION: First Startup can take very long since it downloads the gameserver files!&#xD;
+&#xD;
+Update Notice: Simply restart the container if a newer version of the game is available.</Overview>
+  <Category>GameServers:</Category>
+  <WebUI/>
+  <TemplateURL>false</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/mavrag/unraid-templates/master/logos/asa.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText>If you like my work please consider Donating.</DonateText>
+  <DonateLink>https://www.paypal.com/paypalme/mavragh</DonateLink>
+  <Requires/>
+  <Config Name="ShooterGame" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame" Default="" Mode="rw" Description="ShooterGame directory (config/saves/mods)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/ASA</Config>
+  <Config Name="DedicatedServer" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/common/ARK Survival Ascended Dedicated Server" Default="" Mode="rw" Description="Dedicated server installation directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/Server</Config>
+  <Config Name="Cluster" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/common/ShooterGame" Default="" Mode="rw" Description="Cluster directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/Cluster</Config>
+  <Config Name="UDP 7777" Target="7777" Default="" Mode="udp" Description="Game port (UDP)" Type="Port" Display="always" Required="true" Mask="false">7777</Config>
+  <Config Name="RCON TCP" Target="27020" Default="" Mode="tcp" Description="RCON port (TCP)" Type="Port" Display="always" Required="false" Mask="false">27020</Config>
+  <Config Name="UID" Target="UID" Default="" Mode="" Description="Unraid compatibility (not used by this image)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
+  <Config Name="GID" Target="GID" Default="" Mode="" Description="Unraid compatibility (not used by this image)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="The UID to run server as" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="The GID to run server as" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+  <Config Name="Timezone" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">Etc/UTC</Config>
+  <Config Name="BattleEye" Target="BATTLEEYE" Default="" Mode="" Description="Set to TRUE to use BattleEye, FALSE to not use BattleEye" Type="Variable" Display="advanced-hide" Required="false" Mask="false">TRUE</Config>
+  <Config Name="Enable RCON" Target="RCON_ENABLED" Default="" Mode="" Description="Needed for Graceful Shutdown" Type="Variable" Display="advanced-hide" Required="false" Mask="false">TRUE</Config>
+  <Config Name="Display Monitor Messages" Target="DISPLAY_POK_MONITOR_MESSAGE" Default="" Mode="" Description="TRUE to show the Server Monitor Messages / Update Monitor" Type="Variable" Display="advanced-hide" Required="false" Mask="false">FALSE</Config>
+  <Config Name="Update Server" Target="UPDATE_SERVER" Default="" Mode="" Description="Enable or disable update checks" Type="Variable" Display="advanced-hide" Required="false" Mask="false">TRUE</Config>
+  <Config Name="Update Check Interval" Target="CHECK_FOR_UPDATE_INTERVAL" Default="" Mode="" Description="Check for Updates interval in hours" Type="Variable" Display="advanced-hide" Required="false" Mask="false">24</Config>
+  <Config Name="Update Window Minimum" Target="UPDATE_WINDOW_MINIMUM_TIME" Default="" Mode="" Description="Defines the minimum time, relative to server time, when an update check should run" Type="Variable" Display="advanced-hide" Required="false" Mask="false">12:00 AM</Config>
+  <Config Name="Update Window Maximum" Target="UPDATE_WINDOW_MAXIMUM_TIME" Default="" Mode="" Description="Defines the maximum time, relative to server time, when an update check should run" Type="Variable" Display="advanced-hide" Required="false" Mask="false">11:59 PM</Config>
+  <Config Name="Restart Notice Minutes" Target="RESTART_NOTICE_MINUTES" Default="" Mode="" Description="Duration in minutes for notifying players before a server restart due to updates" Type="Variable" Display="advanced-hide" Required="false" Mask="false">30</Config>
+  <Config Name="Enable MOTD" Target="ENABLE_MOTD" Default="" Mode="" Description="Enable or disable Message of the Day" Type="Variable" Display="advanced-hide" Required="false" Mask="false">FALSE</Config>
+  <Config Name="MOTD" Target="MOTD" Default="" Mode="" Description="Message of the Day" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="MOTD Duration" Target="MOTD_DURATION" Default="" Mode="" Description="Duration for the Message of the Day" Type="Variable" Display="advanced-hide" Required="false" Mask="false">30</Config>
+  <Config Name="Map" Target="MAP_NAME" Default="" Mode="" Description="The map name (`TheIsland`) or a custom map name" Type="Variable" Display="always" Required="false" Mask="false">TheIsland</Config>
+  <Config Name="Session Name" Target="SESSION_NAME" Default="" Mode="" Description="The session name for the server" Type="Variable" Display="always" Required="true" Mask="false">Server_name</Config>
+  <Config Name="Admin Password" Target="SERVER_ADMIN_PASSWORD" Default="" Mode="" Description="The admin password for the server" Type="Variable" Display="always" Required="true" Mask="true">MyPassword</Config>
+  <Config Name="Server Password" Target="SERVER_PASSWORD" Default="" Mode="" Description="Set a server password or leave it blank (ONLY NUMBERS AND CHARACTERS ARE ALLOWED BY DEVS)" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="ASA Port" Target="ASA_PORT" Default="" Mode="" Description="The game port for the server" Type="Variable" Display="advanced-hide" Required="false" Mask="false">7777</Config>
+  <Config Name="RCON Port" Target="RCON_PORT" Default="" Mode="" Description="Rcon Port Use for Most Server Operations" Type="Variable" Display="advanced-hide" Required="false" Mask="false">27020</Config>
+  <Config Name="Max Players" Target="MAX_PLAYERS" Default="" Mode="" Description="Max allowed players" Type="Variable" Display="always" Required="false" Mask="false">127</Config>
+  <Config Name="Cluster ID" Target="CLUSTER_ID" Default="" Mode="" Description="The Cluster ID for the server" Type="Variable" Display="advanced-hide" Required="false" Mask="false">cluster</Config>
+  <Config Name="Mod IDs" Target="MOD_IDS" Default="" Mode="" Description="Add your mod IDs here, separated by commas, e.g., 123456789,987654321" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Custom Server Args" Target="CUSTOM_SERVER_ARGS" Default="" Mode="" Description="If You need to add more Custom Args -ForceRespawnDinos -ForceAllowCaveFlyers" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
