@@ -30,7 +30,7 @@ Update Notice: Simply restart the container if a newer version of the game is av
   <Requires/>
   <Config Name="ShooterGame" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame" Default="" Mode="rw" Description="ShooterGame directory (config/saves/mods)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/ASA</Config>
   <Config Name="DedicatedServer" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/common/ARK Survival Ascended Dedicated Server" Default="" Mode="rw" Description="Dedicated server installation directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/Server</Config>
-  <Config Name="Cluster" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/common/ShooterGame" Default="" Mode="rw" Description="Cluster directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/Cluster</Config>
+  <Config Name="downloading" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/downloading" Default="" Mode="rw" Description="downloading directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/downloading</Config>
   <Config Name="UDP 7777" Target="7777" Default="" Mode="udp" Description="Game port (UDP)" Type="Port" Display="always" Required="true" Mask="false">7777</Config>
   <Config Name="RCON TCP" Target="27020" Default="" Mode="tcp" Description="RCON port (TCP)" Type="Port" Display="always" Required="false" Mask="false">27020</Config>
   <Config Name="UID" Target="UID" Default="" Mode="" Description="Unraid compatibility (not used by this image)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
