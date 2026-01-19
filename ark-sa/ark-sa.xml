@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>ark-sa</Name>
+  <Name>ARKSurvivalAscended</Name>
   <Repository>acekorneya/asa_server:latest</Repository>
   <Registry>https://hub.docker.com/r/acekorneya/asa_server</Registry>
   <Network>bridge</Network>
