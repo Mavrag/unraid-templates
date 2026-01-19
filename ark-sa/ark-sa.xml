@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>ARKSurvivalAscended</Name>
+  <Name>ark-sa</Name>
   <Repository>acekorneya/asa_server:latest</Repository>
   <Registry>https://hub.docker.com/r/acekorneya/asa_server</Registry>
   <Network>bridge</Network>
@@ -11,12 +11,6 @@
   <Support>https://github.com/Acekorneya/Ark-Survival-Ascended-Server</Support>
   <Project>https://survivetheark.com/</Project>
   <Overview>`ich777` no longer supports ARK: Survival Ascended, so this is an alternative Unraid template that uses the `acekorneya/asa_server` image.&#xD;
-&#xD;
-Migration (from ich777, same Unraid server):&#xD;
-1) Stop the old container.&#xD;
-2) Backup your old appdata folder (example): rename `/mnt/user/appdata/ark-sa` to `/mnt/user/appdata/ark-sa-ich`.&#xD;
-3) Create the new folder: `/mnt/user/appdata/ark-sa/SteamApps`.&#xD;
-4) Copy saves/config: from `/mnt/user/appdata/ark-sa-ich/ShooterGame/Saved/` to `/mnt/user/appdata/ark-sa/SteamApps/common/ARK Survival Ascended Dedicated Server/ShooterGame/Saved/`.&#xD;
 &#xD;
 This Docker will download and install ARK: Survival Ascended Dedicated Server and run it (Normal server startup of ARK can take a long time!).&#xD;
 &#xD;
@@ -32,9 +26,11 @@ Update Notice: Simply restart the container if a newer version of the game is av
   <CPUset/>
   <DateInstalled/>
   <DonateText>If you like my work please consider Donating.</DonateText>
-  <DonateLink>https://www.paypal.me/mavragh</DonateLink>
+  <DonateLink>https://www.paypal.com/paypalme/mavragh</DonateLink>
   <Requires/>
-  <Config Name="SteamApps" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps" Default="" Mode="rw" Description="SteamCMD staging/cache (appmanifest/downloading/temp) and game files. Keep this as a single mount (sub-mounts inside the install path can cause Steam update commit failures)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/SteamApps</Config>
+  <Config Name="ShooterGame" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/common/ARK Survival Ascended Dedicated Server/ShooterGame" Default="" Mode="rw" Description="ShooterGame directory (config/saves/mods)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/ASA</Config>
+  <Config Name="DedicatedServer" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/common/ARK Survival Ascended Dedicated Server" Default="" Mode="rw" Description="Dedicated server installation directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/Server</Config>
+  <Config Name="Cluster" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps/common/ShooterGame" Default="" Mode="rw" Description="Cluster directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/Cluster</Config>
   <Config Name="UDP 7777" Target="7777" Default="" Mode="udp" Description="Game port (UDP)" Type="Port" Display="always" Required="true" Mask="false">7777</Config>
   <Config Name="RCON TCP" Target="27020" Default="" Mode="tcp" Description="RCON port (TCP)" Type="Port" Display="always" Required="false" Mask="false">27020</Config>
   <Config Name="UID" Target="UID" Default="" Mode="" Description="Unraid compatibility (not used by this image)" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
