@@ -32,7 +32,7 @@ Update Notice: Simply restart the container if a newer version of the game is av
   <CPUset/>
   <DateInstalled/>
   <DonateText>If you like my work please consider Donating.</DonateText>
-  <DonateLink>https://www.paypal.com/paypalme/mavragh</DonateLink>
+  <DonateLink>https://www.paypal.me/mavragh</DonateLink>
   <Requires/>
   <Config Name="SteamApps" Target="/usr/games/.wine/drive_c/POK/Steam/steamapps" Default="" Mode="rw" Description="SteamCMD staging/cache (appmanifest/downloading/temp) and game files. Keep this as a single mount (sub-mounts inside the install path can cause Steam update commit failures)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ark-sa/SteamApps</Config>
   <Config Name="UDP 7777" Target="7777" Default="" Mode="udp" Description="Game port (UDP)" Type="Port" Display="always" Required="true" Mask="false">7777</Config>
